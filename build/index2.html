@@ -22,9 +22,11 @@
                 <div class="sectioninputs">
                     <label class="label" for="ptitle">Portfolio title</label>
                     <input class= "forminputs" id="ptitle" name="ptitle" type="text" autofocus aria-required="true" required>
+                    <span class="validation"></span>
                 
                     <label class="label" for="paddress">Portfolio address</label>
                     <input class= "forminputs" id="paddress" name="paddress" type="text" aria-labelledby="domain" aria-required="true" required>
+                    <span class="validation"></span>
                     <span class="note" id="domain">.sample.com</span>
                 </div>
             </fieldset>
@@ -36,13 +38,16 @@
                 <div class="sectioninputs">
                     <label class="label" for="name">Name</label>
                     <input class= "forminputs" id="name" name="name" type="text" aria-required="true" required>
+                    <span class="validation"></span>
 
                     <label class="label" for="email">Email</label>
                     <input class= "forminputs" id="email" name="email" type="email" aria-required="true" aria-describedby="share" required>
+                    <span class="validation"></span>
                     <span class="note" id="share">NOTE: We'll never share your email, promise.</span> 
 
                     <label class="label" for="pword">Password</label>
                     <input class= "forminputs" id="pword" name="pword" type="password" aria-required="true" required>
+                    <span class="validation"></span>
 
                     <!--extra: include show password
                     <input id="show_pword" name="show_pword" type="checkbox" aria-required="false">
@@ -58,6 +63,7 @@
  
                     <label class="label" for="cardnum">Card number</label>
                     <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="[0-9]{13,16}" autocomplete="off" aria-required="true" required>
+                    <span class="validation"></span>
 
                     <!--JAVASCRIPT: auto-select card-->
                     <fieldset class="all_cardtypes">
