@@ -48,6 +48,10 @@ body {
 	background: #B3E3FF;
 }
 
+.no-js .scripts {
+	display: none;
+}
+
 /**---------Header---------**/
 .headerwrapper {
 	width:100%;
@@ -192,10 +196,6 @@ body {
 	margin: 13px 1px;
 }
 
-.form input[type=radio]:checked {
-	
-}
-
 .menuinputs {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -214,7 +214,7 @@ body {
 	color: #A2A2A2;
 }
 
-input:invalid + span {
+.invalid {
 	display: inline-block;
 	background: url('/assets/images/sprite.png') no-repeat -2px -499px;
 	width: 19px;
@@ -223,7 +223,7 @@ input:invalid + span {
 	margin-left: -20px;
 }
 
-input:valid + span {
+.valid {
 	display: inline-block;
 	background: url('/assets/images/sprite.png') no-repeat -31px -499px;
 	width: 19px;
@@ -233,15 +233,46 @@ input:valid + span {
 }
 
 #secure {
+	font-size: 0;
+	margin-top: -25px;
+}
+
+#securelink {
 	display: block;
 	background: url('/assets/images/sprite.png') no-repeat -60px -499px;
 	width: 14px;
 	height: 19px;
-	font-size: 0;
 	margin: 0;
 	position: absolute;
-	bottom: 115px;
-	right: 55px;
+	bottom: 15px;
+	right: 15px;
+}
+
+.no-js #show_pword {
+	display:block;
+}
+
+#show_pword {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url('/assets/images/sprite.png') no-repeat -28px -2px;
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+}
+
+#show_pword:checked {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url('/assets/images/sprite.png') no-repeat -136px -2px;
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+}
+
+#show_label {
+	display: inline-block;
+	color: #5A5A5A;
 }
 
 /**---------Custom Form Stylings---------**/
@@ -265,7 +296,7 @@ input:valid + span {
 	right: 40px;
 }
 
-#amex-cc:checked, #amex-cc:hover {
+#amex-cc:checked, .no-js #amex-cc:hover {
 	background: url('/assets/images/sprite.png') no-repeat 0 -122px;
 }
 
@@ -273,7 +304,7 @@ input:valid + span {
 	background: url('/assets/images/sprite.png') no-repeat 0 -206px;
 }
 
-#visa-cc:checked, #visa-cc:hover {
+#visa-cc:checked, .no-js #visa-cc:hover {
 	background: url('/assets/images/sprite.png') no-repeat -48px -122px;
 }
 
@@ -281,7 +312,7 @@ input:valid + span {
 	background: url('/assets/images/sprite.png') no-repeat -48px -164px;
 }
 
-#discover-cc:checked, #discover-cc:hover {
+#discover-cc:checked, .no-js #discover-cc:hover {
 	background: url('/assets/images/sprite.png') no-repeat -96px -122px;
 }
 
@@ -289,7 +320,7 @@ input:valid + span {
 	background: url('/assets/images/sprite.png') no-repeat -96px -206px;
 }
 
-#mastercard-cc:checked, #mastercard-cc:hover {
+#mastercard-cc:checked, .no-js #mastercard-cc:hover {
 	background: url('/assets/images/sprite.png') no-repeat -144px -122px;
 }
 
@@ -350,7 +381,7 @@ input:valid + span {
 	text-align: center;
 }
 
-#amex_scode_loc {
+.no-js #amex_scode_loc {
 	background: url('/assets/images/sprite.png') no-repeat 0 -331px;
 	width: 70px;
 	height: 33px;
@@ -358,6 +389,19 @@ input:valid + span {
 	position: absolute;
 	top: 141px;
 	left: 197px;
+
+	font-size: 0px;
+}
+
+.js #amex_scode_loc {
+	display: none;
+	background: url('/assets/images/sprite.png') no-repeat 0 -331px;
+	width: 70px;
+	height: 33px;
+
+	position: absolute;
+	top: 141px;
+	left: 130px;
 
 	font-size: 0px;
 }
@@ -373,4 +417,5 @@ input:valid + span {
 
 	font-size: 0px;
 }
+
 

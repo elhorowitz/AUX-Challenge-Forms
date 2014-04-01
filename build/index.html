@@ -1,9 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <title>Whoo!</title>
         <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+        <script src="assets/js/lib/modernizr.js"></script>
+        
+
+        <!-- <script>
+            window.onload = function() {
+                // get the form and its input elements
+                var form = document.forms[0],
+                inputs = form.elements;
+                // if no autofocus, put the focus in the first field
+                if (!Modernizr.input.autofocus) {
+                    inputs[0].focus();
+                }
+                // if required not supported, emulate it
+                if (!Modernizr.input.required) {
+                    form.onsubmit = function() {
+                        var required = [], att, val;
+                        // loop through input elements looking for required
+                        for (var i = 0; i < inputs.length; i++) {
+                            att = inputs[i].getAttribute('required');
+                            // if required, get the value and trim whitespace
+                            if (att != null) {
+                                val = inputs[i].value;
+                                // if the value is empty, add to required array
+                                if (val.replace(/^\s+|\s+$/g, '') == '') {
+                                    required.push(inputs[i].name);
+                                }
+                            }
+                        }
+                        // show alert if required array contains any elements
+                        if (required.length > 0) {
+                            alert('The following fields are required: ' +
+                                required.join(', '));
+                            // prevent the form from being submitted
+                            return false;
+                        }
+                    };
+                }
+            }
+        </script> -->
+
+
+
     </head>
 
     <body>
@@ -44,9 +86,8 @@
                     <label class="label" for="pword">Password</label>
                     <input class= "forminputs" id="pword" name="pword" type="password" aria-required="true" required>
 
-                    <!--extra: include show password
                     <input id="show_pword" name="show_pword" type="checkbox" aria-required="false">
-                    <label for="show_pword">Show Password</label>-->
+                    <label class="note" for="show_pword" id="show_label">Show Password</label>
                 </div>
             </fieldset>
 
@@ -57,7 +98,8 @@
                 <div class="sectioninputs">
  
                     <label class="label" for="cardnum">Card number</label>
-                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="[0-9]{13,16}" autocomplete="off" aria-required="true" required>
+                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="[0-9]{13,16}" autocomplete="off" aria-describedby="secure" aria-required="true" required>
+                    <span class="note" id="secure">This is a secure form<a href="#" id="securelink"></a></span>
 
                     <!--JAVASCRIPT: auto-select card-->
                     <fieldset class="all_cardtypes">
@@ -75,7 +117,7 @@
                     <label class="label" for="scode">Security code</label>
                     <input class= "forminputs" id="scode" name="scode" type="text" pattern="[0-9]{3,4}" autocomplete="off" aria-describedby="amex_scode_loc other_scode_loc" aria-required="true" required>
                     <span class="note" id="amex_scode_loc">American Express security codes are located on the front of your credit card</span>
-                    <span class="note" id="other_scode_loc">All other card security codes are located on the back</span>
+                    <span class="note" id="other_scode_loc">Card security codes are located on the back for non-American Express cards</span>
                     
                     <fieldset class="exp_date">
                         <legend class="label">Expiration date</legend>
@@ -110,9 +152,13 @@
                     </fieldset>
                 </div>
             </fieldset>
-            <a href="" class="note" id="secure">This is a secure form</a>
             <label class="hiddenlabel" for="submit">Submit</label>
             <input id="submit" name="submit" type="submit" value="Create your portfolio">
         </form>
+        <div class="scripts">
+            <script src="assets/js/lib/jquery.js"></script>
+            <script src="assets/js/lib/jquery.validate.js"></script>
+            <script src="assets/js/script.js"></script>
+        </div>
     </body>
 </html>
