@@ -63,10 +63,11 @@
                 
                 <div class="sectioninputs">
                     <label class="label" for="ptitle">Portfolio title</label>
-                    <input class= "forminputs" id="ptitle" name="ptitle" type="text" autofocus aria-required="true" required>
+                    <input class= "forminputs" id="ptitle" name="ptitle" type="text" pattern="^[a-zA-Z].{1,19}$" title="Must begin with a letter and be 2 to 20 characters long" autofocus aria-required="true" required>
+                    <span class="validate">
                 
                     <label class="label" for="paddress">Portfolio address</label>
-                    <input class= "forminputs" id="paddress" name="paddress" type="text" aria-labelledby="domain" aria-required="true" required>
+                    <input class= "forminputs" id="paddress" name="paddress" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,19}$" title="Must begin with a letter and be 2 to 20 characters long. Only dashes, underscores, and periods are allowed for symbols!" aria-labelledby="domain" aria-required="true" required>
                     <span class="note" id="domain">.sample.com</span>
                 </div>
             </fieldset>
@@ -77,17 +78,19 @@
 
                 <div class="sectioninputs">
                     <label class="label" for="name">Name</label>
-                    <input class= "forminputs" id="name" name="name" type="text" aria-required="true" required>
+                    <input class= "forminputs" id="name" name="name" type="text" pattern="^[a-zA-Z].{1,19}$" title="Must begin with a letter and be 2 to 20 characters long" aria-required="true" required>
 
                     <label class="label" for="email">Email</label>
                     <input class= "forminputs" id="email" name="email" type="email" aria-required="true" aria-describedby="share" required>
                     <span class="note" id="share">NOTE: We'll never share your email, promise.</span> 
 
                     <label class="label" for="pword">Password</label>
-                    <input class= "forminputs" id="pword" name="pword" type="password" aria-required="true" required>
+                    <input class= "forminputs" id="pword" name="pword" type="password" pattern="(?=^.{5,}$)((?=.*\d))(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Must include an uppercase character, a lowercase character, and a number. Minimum 5 characters long!" aria-required="true" required>
 
+                    <!--
                     <input id="show_pword" name="show_pword" type="checkbox" aria-required="false">
                     <label class="note" for="show_pword" id="show_label">Show Password</label>
+                    -->
                 </div>
             </fieldset>
 
@@ -96,15 +99,15 @@
                 <legend class="sectionheader">Finally, enter your payment information</legend>
                 
                 <div class="sectioninputs">
- 
-                    <label class="label" for="cardnum">Card number</label>
-                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="[0-9]{13,16}" autocomplete="off" aria-describedby="secure" aria-required="true" required>
+                    
                     <span class="note" id="secure">This is a secure form<a href="#" id="securelink"></a></span>
+                    <label class="label" for="cardnum">Card number</label>
+                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="[0-9]{13,16}" title="Only include numbers! Example: 1234567891011" autocomplete="off" aria-describedby="secure" aria-required="true" required>
 
-                    <!--JAVASCRIPT: auto-select card-->
+                    <!--NO JAVASCRIPT: manually select card-->
                     <fieldset class="all_cardtypes">
                         <legend class="hiddenlabel">Card type</legend>
-                        <input id="amex-cc" name="cardtype" type="radio" aria-required="true" required><!-- 
+                        <input id="amex-cc" name="cardtype" type="radio" title="Only include numbers! Example: 123" aria-required="true" required><!-- 
                          --><label class="hiddenlabel" id="cardlabel-amex" for="amex-cc">American Express</label><!-- 
                          --><input id="visa-cc" name="cardtype" type="radio" aria-required="true" required><!-- 
                          --><label class="hiddenlabel" id="cardlabel-visa" for="visa-cc">Visa</label><!-- 
@@ -115,7 +118,7 @@
                     </fieldset>
 
                     <label class="label" for="scode">Security code</label>
-                    <input class= "forminputs" id="scode" name="scode" type="text" pattern="[0-9]{3,4}" autocomplete="off" aria-describedby="amex_scode_loc other_scode_loc" aria-required="true" required>
+                    <input class= "forminputs" id="scode" name="scode" type="text" pattern="[0-9]{3,4}" autocomplete="off" title="Example: 123" aria-describedby="amex_scode_loc other_scode_loc" aria-required="true" required>
                     <span class="note" id="amex_scode_loc">American Express security codes are located on the front of your credit card</span>
                     <span class="note" id="other_scode_loc">Card security codes are located on the back for non-American Express cards</span>
                     

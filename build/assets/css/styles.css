@@ -296,6 +296,11 @@ body {
 	right: 40px;
 }
 
+.cardtype {
+	position: relative;
+	top: -122px;
+}
+
 #amex-cc:checked, .no-js #amex-cc:hover {
 	background: url('/assets/images/sprite.png') no-repeat 0 -122px;
 }
