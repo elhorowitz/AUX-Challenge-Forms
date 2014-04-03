@@ -214,22 +214,23 @@ body {
 	color: #A2A2A2;
 }
 
-.invalid {
-	display: inline-block;
-	background: url('/assets/images/sprite.png') no-repeat -2px -499px;
+.status {
+	display: block;
+	background: url('/assets/images/sprite.png') no-repeat -2px -450px;
 	width: 19px;
 	height: 19px;
-	float: left;
-	margin-left: -20px;
+	font-size: 0;
+	float: right;
+	margin: -45px -30px;
 }
 
-.valid {
-	display: inline-block;
-	background: url('/assets/images/sprite.png') no-repeat -31px -499px;
-	width: 19px;
-	height: 19px;
+.error {
+	display: block;
+	margin: -17px 0 6px 0;
+	font-family: "Lucida Grande", Arial, Verdana, sans-serif;
+	font-size: .7em;
+	color: red;
 	float: left;
-	margin-left: -20px;
 }
 
 #secure {

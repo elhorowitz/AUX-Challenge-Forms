@@ -56,7 +56,7 @@
                 <h2>50 projects, 500 images, 10 videos, domain binding, and technical support.</h2>
             </header>
         </div>
-        <form class="form" action="" method="get">
+        <form class="form" name="form" action="" method="get">
             <!--First section of the form--> 
             <fieldset class="formsection">
                 <legend class="sectionheader">First, name your portfolio</legend>
@@ -64,7 +64,6 @@
                 <div class="sectioninputs">
                     <label class="label" for="ptitle">Portfolio title</label>
                     <input class= "forminputs" id="ptitle" name="ptitle" type="text" pattern="^[a-zA-Z].{1,19}$" title="Must begin with a letter and be 2 to 20 characters long" autofocus aria-required="true" required>
-                    <span class="validate">
                 
                     <label class="label" for="paddress">Portfolio address</label>
                     <input class= "forminputs" id="paddress" name="paddress" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,19}$" title="Must begin with a letter and be 2 to 20 characters long. Only dashes, underscores, and periods are allowed for symbols!" aria-labelledby="domain" aria-required="true" required>
@@ -160,7 +159,8 @@
         </form>
         <div class="scripts">
             <script src="assets/js/lib/jquery.js"></script>
-            <script src="assets/js/lib/jquery.validate.js"></script>
+            <script src="assets/js/lib/jquery.validate.min.js"></script>
+            <script src="assets/js/validation.js"></script>
             <script src="assets/js/script.js"></script>
         </div>
     </body>
