@@ -48,8 +48,8 @@ body {
 	background: #B3E3FF;
 }
 
-.no-js .scripts {
-	display: none;
+.no-js .script {
+	display:none;
 }
 
 /**---------Header---------**/
@@ -208,7 +208,7 @@ body {
 
 .note {
 	display: block;
-	margin: -12px 0 25px 0;
+	margin: -12px 0 24px 0;
 	font-family: "Lucida Grande", Arial, Verdana, sans-serif;
 	font-size: .7em;
 	color: #A2A2A2;
@@ -224,6 +224,14 @@ body {
 	margin: -45px -30px;
 }
 
+#statuspword {
+	margin-top: -72px;
+}
+
+#pword.forminputs + label {
+	margin-top: -43px;
+}
+
 .error {
 	display: block;
 	margin: -17px 0 6px 0;
@@ -233,8 +241,9 @@ body {
 	float: left;
 }
 
-#montherror, #yearerror {
-	background:blue;
+.menuinputs + label {
+	position: absolute;
+	bottom: 20px;
 }
 
 #secure {
@@ -253,8 +262,8 @@ body {
 	right: 15px;
 }
 
-.no-js #show_pword {
-	display:block;
+.no-js #show_pword, .no-js #show_label {
+	display:none;
 }
 
 #show_pword {
@@ -264,20 +273,22 @@ body {
 	width: 17px;
 	height: 17px;
 	display: inline-block;
+	position: absolute;
+	bottom: 38px;
+	left: 38px;
 }
 
 #show_pword:checked {
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	background: url('/assets/images/sprite.png') no-repeat -136px -2px;
-	width: 17px;
-	height: 17px;
-	display: inline-block;
 }
 
 #show_label {
 	display: inline-block;
 	color: #5A5A5A;
+	position: absolute;
+	bottom: 15px;
+	left: 64px;
+	line-height: 2em;
 }
 
 /**---------Custom Form Stylings---------**/
@@ -286,6 +297,10 @@ body {
 	width: 290px;
 	border-radius: 5px 0 0 5px;
 	border-right: 0;
+}
+
+.js #pword {
+	margin-bottom: 47px;
 }
 
 #cardnum {
@@ -306,7 +321,7 @@ body {
 	top: -122px;
 }
 
-#amex-cc:checked, .no-js #amex-cc:hover {
+#amex-cc:checked, .no-js #amex-cc:hover, .js #amex-cc {
 	background: url('/assets/images/sprite.png') no-repeat 0 -122px;
 }
 
@@ -314,7 +329,7 @@ body {
 	background: url('/assets/images/sprite.png') no-repeat 0 -206px;
 }
 
-#visa-cc:checked, .no-js #visa-cc:hover {
+#visa-cc:checked, .no-js #visa-cc:hover, .js #visa-cc {
 	background: url('/assets/images/sprite.png') no-repeat -48px -122px;
 }
 
@@ -322,7 +337,7 @@ body {
 	background: url('/assets/images/sprite.png') no-repeat -48px -164px;
 }
 
-#discover-cc:checked, .no-js #discover-cc:hover {
+#discover-cc:checked, .no-js #discover-cc:hover, .js #discover-cc {
 	background: url('/assets/images/sprite.png') no-repeat -96px -122px;
 }
 
@@ -330,7 +345,7 @@ body {
 	background: url('/assets/images/sprite.png') no-repeat -96px -206px;
 }
 
-#mastercard-cc:checked, .no-js #mastercard-cc:hover {
+#mastercard-cc:checked, .no-js #mastercard-cc:hover, .js #mastercard-cc {
 	background: url('/assets/images/sprite.png') no-repeat -144px -122px;
 }
 
@@ -380,7 +395,7 @@ body {
 	background: #FAFAFA;
 	color: #9A9AA0;
 	position: absolute;
-	bottom: 15px;
+	bottom: 16px;
 	right: 40px;
 	border-radius: 0 5px 5px 0;
 	box-shadow: inset 0px 2px 1px -1px #CBCBCB;

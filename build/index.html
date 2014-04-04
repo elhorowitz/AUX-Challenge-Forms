@@ -4,32 +4,7 @@
         <meta charset="utf-8">
         <title>Whoo!</title>
         <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-        <script src="assets/js/lib/modernizr.js"></script>        
-
-        <script>
-
-                Modernizr.load([
-                    {
-                        test: Modernizr.input.focus,
-                        nope : function() {
-                            document.getElementById('ptitle').focus();
-                        }
-                    },
-                    {
-                        test: Modernizr.input.required,
-                        nope : [
-                            'assets/js/lib/jquery.js',
-                            'assets/js/lib/jquery.validate.min.js',
-                            'assets/js/validation.js'
-                        ],
-                        yep: 'assets/js/script.js'
-                    } 
-                ]);
-
-        </script>
-
-
-
+        <script src="assets/js/lib/modernizr.js"></script>
     </head>
 
     <body>
@@ -47,7 +22,7 @@
                 
                 <div class="sectioninputs">
                     <label class="label" for="ptitle">Portfolio title</label>
-                    <input class= "forminputs" id="ptitle" name="ptitle" type="text" pattern="^[a-zA-Z].{1,19}$" title="Must begin with a letter and be 2 to 20 characters long" autofocus aria-required="true" required>
+                    <input class= "forminputs" id="ptitle" name="ptitle" type="text" pattern="^[a-zA-Z].{1,19}$" title="Must begin with a letter and be 2 to 20 characters long" aria-required="true" required>
                 
                     <label class="label" for="paddress">Portfolio address</label>
                     <input class= "forminputs" id="paddress" name="paddress" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,19}$" title="Must begin with a letter and be 2 to 20 characters long. Only dashes, underscores, and periods are allowed for symbols!" aria-labelledby="domain" aria-required="true" required>
@@ -70,10 +45,10 @@
                     <label class="label" for="pword">Password</label>
                     <input class= "forminputs" id="pword" name="pword" type="password" pattern="(?=^.{5,}$)((?=.*\d))(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Must include an uppercase character, a lowercase character, and a number. Minimum 5 characters long!" aria-required="true" required>
 
-                    <!--
+                    
                     <input id="show_pword" name="show_pword" type="checkbox" aria-required="false">
                     <label class="note" for="show_pword" id="show_label">Show Password</label>
-                    -->
+                    
                 </div>
             </fieldset>
 
@@ -105,7 +80,7 @@
                     <span class="note" id="amex_scode_loc">American Express security codes are located on the front of your credit card</span>
                     <span class="note" id="other_scode_loc">Card security codes are located on the back for non-American Express cards</span>
                     
-                    <fieldset class="exp_date">
+                    <fieldset class="exp_date" id="exp_date">
                         <legend class="label">Expiration date</legend>
                         <label class="hiddenlabel" for="month">Month</label><!-- 
                          --><select class="menuinputs" id="month" name="month" aria-required="true" required>
@@ -141,11 +116,8 @@
             <label class="hiddenlabel" for="submit">Submit</label>
             <input id="submit" name="submit" type="submit" value="Create your portfolio">
         </form>
-        <!--<div class="scripts">
-            <script src="assets/js/lib/jquery.js"></script>
-            <script src="assets/js/lib/jquery.validate.min.js"></script>
-            <script src="assets/js/validation.js"></script>
+        <div class="script">
             <script src="assets/js/script.js"></script>
-        </div>-->
+        </div>
     </body>
 </html>
