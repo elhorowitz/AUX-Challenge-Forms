@@ -4,45 +4,29 @@
         <meta charset="utf-8">
         <title>Whoo!</title>
         <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-        <script src="assets/js/lib/modernizr.js"></script>
-        
+        <script src="assets/js/lib/modernizr.js"></script>        
 
-        <!-- <script>
-            window.onload = function() {
-                // get the form and its input elements
-                var form = document.forms[0],
-                inputs = form.elements;
-                // if no autofocus, put the focus in the first field
-                if (!Modernizr.input.autofocus) {
-                    inputs[0].focus();
-                }
-                // if required not supported, emulate it
-                if (!Modernizr.input.required) {
-                    form.onsubmit = function() {
-                        var required = [], att, val;
-                        // loop through input elements looking for required
-                        for (var i = 0; i < inputs.length; i++) {
-                            att = inputs[i].getAttribute('required');
-                            // if required, get the value and trim whitespace
-                            if (att != null) {
-                                val = inputs[i].value;
-                                // if the value is empty, add to required array
-                                if (val.replace(/^\s+|\s+$/g, '') == '') {
-                                    required.push(inputs[i].name);
-                                }
-                            }
+        <script>
+
+                Modernizr.load([
+                    {
+                        test: Modernizr.input.focus,
+                        nope : function() {
+                            document.getElementById('ptitle').focus();
                         }
-                        // show alert if required array contains any elements
-                        if (required.length > 0) {
-                            alert('The following fields are required: ' +
-                                required.join(', '));
-                            // prevent the form from being submitted
-                            return false;
-                        }
-                    };
-                }
-            }
-        </script> -->
+                    },
+                    {
+                        test: Modernizr.input.required,
+                        nope : [
+                            'assets/js/lib/jquery.js',
+                            'assets/js/lib/jquery.validate.min.js',
+                            'assets/js/validation.js'
+                        ],
+                        yep: 'assets/js/script.js'
+                    } 
+                ]);
+
+        </script>
 
 
 
@@ -157,11 +141,11 @@
             <label class="hiddenlabel" for="submit">Submit</label>
             <input id="submit" name="submit" type="submit" value="Create your portfolio">
         </form>
-        <div class="scripts">
+        <!--<div class="scripts">
             <script src="assets/js/lib/jquery.js"></script>
             <script src="assets/js/lib/jquery.validate.min.js"></script>
             <script src="assets/js/validation.js"></script>
             <script src="assets/js/script.js"></script>
-        </div>
+        </div>-->
     </body>
 </html>
