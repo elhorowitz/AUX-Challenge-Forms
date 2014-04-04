@@ -8,8 +8,8 @@
 			cc_length : '^[0-9]{15}$',
 			cvv_regex : '^[0-9]{4}$',
 			pattern : 'Only include numbers! Example: 123412345612345',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat 0 -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat 0 -206px'
+			is_checked : 'url(\'..\/images\/sprite.png\') no-repeat 0 -122px',
+			not_checked : 'url(\'..\/images\/sprite.png\') no-repeat 0 -206px'
 		},
 		visa : {
 			radiobutton : 'visa-cc',
@@ -17,8 +17,8 @@
 			cc_length : '^[0-9]{13,16}$',
 			cvv_regex : '^[0-9]{3}$',
 			pattern : 'Only include numbers! Example: 1234123412341234',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -48px -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -48px -164px'
+			is_checked : 'url(\'..\/images\/sprite.png\') no-repeat -48px -122px',
+			not_checked : 'url(\'..\/images\/sprite.png\') no-repeat -48px -164px'
 		},
 		discover : {
 			radiobutton : 'discover-cc',
@@ -26,8 +26,8 @@
 			cc_length : '^[0-9]{16}$',
 			cvv_regex : '^[0-9]{3}$',
 			pattern : 'Only include numbers! Example: 1234123412341234',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -96px -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -96px -206px'
+			is_checked : 'url(\'..\/images\/sprite.png\') no-repeat -96px -122px',
+			not_checked : 'url(\'..\/images\/sprite.png\') no-repeat -96px -206px'
 		},
 		mastercard : {
 			radiobutton : 'mastercard-cc',
@@ -35,8 +35,8 @@
 			cc_length : '^[0-9]{16}$',
 			cvv_regex : '^[0-9]{3}$',
 			pattern : 'Only include numbers! Example: 1234123412341234',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -144px -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -144px -206px'
+			is_checked : 'url(\'..\/images\/sprite.png\') no-repeat -144px -122px',
+			not_checked : 'url(\'..\/images\/sprite.png\') no-repeat -144px -206px'
 		}
 	};
 
