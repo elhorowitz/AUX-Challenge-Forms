@@ -5,17 +5,12 @@
 		$(this).after('<label class="status" id="status'+inputID+'" aria-live="polite">hidden</label>');
 	});
 
-	$.validator.addMethod('alpha_start', function(value, element){
-		return /^[a-zA-Z]/.test(value);
-	});
+    $.validator.addMethod('html5_valid', function(value, element){
+        var pattern = new RegExp($(element).attr('pattern'));
+        console.log(pattern);
+        return pattern.test(value);
+    });
 
-	$.validator.addMethod('alpha_dash', function(value, element){
-		return /^[a-zA-Z][a-zA-Z0-9-_\.]/.test(value);
-	});
-
-	$.validator.addMethod('password_type', function(value, element){
-		return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(value);
-	});
 
 	// Setup form validation on the #register-form element
     $(".form").validate({
@@ -24,21 +19,16 @@
         rules: {
             ptitle: {
             	required: true,
-            	alpha_start: true,
-            	minlength: 2,
-            	maxlength: 20
+            	html5_valid: true
             },
             paddress: {
             	required: true,
-            	alpha_dash: true,
-            	minlength: 2,
-            	maxlength: 20
+            	html5_valid: true
+
             },
             name: {
                 required: true,
-            	alpha_start: true,
-            	minlength: 2,
-            	maxlength: 20
+            	html5_valid: true
             },
             email: {
                 required: true,
@@ -46,20 +36,15 @@
             },
             pword: {
             	required: true,
-            	password_type: true,
-            	minlength: 5
+            	html5_valid: true
             }, 
             cardnum: {
             	required: true,
-            	digits: true,
-            	minlength: 13,
-            	maxlength: 16
+            	html5_valid: true
             }, 
             scode: {
             	required: true,
-            	digits: true,
-            	minlength: 3,
-            	maxlength: 4
+            	html5_valid: true
             },
             month: {
             	min: 1
@@ -83,7 +68,7 @@
 	        $(element).removeClass(errorClass);
 	        $("."+errorClass).attr("aria-live", "polite").attr("aria-atomic", true);
 	        $(element).next("."+errorClass).attr("id", inputID+errorClass);
-	        $('#status'+inputID).css('background', "url('/assets/images/sprite.png') no-repeat -2px -499px");
+	        $('#status'+inputID).css('background', "url('/assets/images/sprite.png') no-repeat -2px -499px").html('invalid');
 	        if(inputID.match('email')){
 	        	$('#share').css('margin', '0 0 13px 0');
 	        }
@@ -93,7 +78,7 @@
 	    	//console.log($(label));
 	    	$(label).css( "display", "none" );
         	var thisID = $(element).attr('id');
-	        $('#status'+thisID).css("background", "url('/assets/images/sprite.png') no-repeat -31px -499px");
+	        $('#status'+thisID).css("background", "url('/assets/images/sprite.png') no-repeat -31px -499px").html('valid');
 	        if(thisID.match('email')){
 	        	$('#share').css('margin', '-12px 0 25px 0')
 	        }

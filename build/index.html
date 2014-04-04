@@ -101,7 +101,7 @@
                     
                     <span class="note" id="secure">This is a secure form<a href="#" id="securelink"></a></span>
                     <label class="label" for="cardnum">Card number</label>
-                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="[0-9]{13,16}" title="Only include numbers! Example: 1234567891011" autocomplete="off" aria-describedby="secure" aria-required="true" required>
+                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="^[0-9]{13,16}$" title="Only include numbers! Example: 1234567891011" autocomplete="off" aria-describedby="secure" aria-required="true" required>
 
                     <!--NO JAVASCRIPT: manually select card-->
                     <fieldset class="all_cardtypes">
@@ -117,7 +117,7 @@
                     </fieldset>
 
                     <label class="label" for="scode">Security code</label>
-                    <input class= "forminputs" id="scode" name="scode" type="text" pattern="[0-9]{3,4}" autocomplete="off" title="Example: 123" aria-describedby="amex_scode_loc other_scode_loc" aria-required="true" required>
+                    <input class= "forminputs" id="scode" name="scode" type="text" pattern="^[0-9]{3,4}$" autocomplete="off" title="Example: 123" aria-describedby="amex_scode_loc other_scode_loc" aria-required="true" required>
                     <span class="note" id="amex_scode_loc">American Express security codes are located on the front of your credit card</span>
                     <span class="note" id="other_scode_loc">Card security codes are located on the back for non-American Express cards</span>
                     

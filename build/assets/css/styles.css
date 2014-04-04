@@ -233,6 +233,10 @@ body {
 	float: left;
 }
 
+#montherror, #yearerror {
+	background:blue;
+}
+
 #secure {
 	font-size: 0;
 	margin-top: -25px;

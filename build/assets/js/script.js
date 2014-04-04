@@ -3,28 +3,28 @@
 	/*-----dictionary for card types-----*/
 	var cardDetails = {
 		amex : {
-			radiobutton : '#amex-cc',
+			radiobutton : 'amex-cc',
 			cc_regex : /^3[47]/,
-			cc_length : '[0-9]{15}',
-			cvv_regex : '[0-9]{4}'
+			cc_length : '^[0-9]{15}$',
+			cvv_regex : '^[0-9]{4}$'
 		},
 		visa : {
-			radiobutton : '#visa-cc',
+			radiobutton : 'visa-cc',
 			cc_regex : /^4/,
-			cc_length : '[0-9]{13,16}',
-			cvv_regex : '[0-9]{3}'
+			cc_length : '^[0-9]{13,16}$',
+			cvv_regex : '^[0-9]{3}$'
 		},
 		discover : {
-			radiobutton : '#discover-cc',
+			radiobutton : 'discover-cc',
 			cc_regex : /^6(?:011|5|4[4-9]|22(?:1(?:2[6-9]|[3-9]\d)|[2-8]\d{2}|9(?:[01]\d|2[0-5])))/,
-			cc_length : '[0-9]{16}',
-			cvv_regex : '[0-9]{3}'
+			cc_length : '^[0-9]{16}$',
+			cvv_regex : '^[0-9]{3}$'
 		},
 		mastercard : {
-			radiobutton : '#mastercard-cc',
+			radiobutton : 'mastercard-cc',
 			cc_regex : /^5[0-5]/,
-			cc_length : '[0-9]{16}',
-			cvv_regex : '[0-9]{3}'
+			cc_length : '^[0-9]{16}$',
+			cvv_regex : '^[0-9]{3}$'
 		}
 	};
 
@@ -34,14 +34,12 @@
 	function checkCardType(cardnum) {
 
 		var type;
-
-		$.each(cardDetails, function(card, details) {
-			//console.log(details.cc_regex+" "+cardnum);
-			if (details.cc_regex.test(cardnum)){
-				//console.log(card);
+		//console.log(cardDetails['amex']['cc_regex']);
+		for (var card in cardDetails) {
+			if (cardDetails[card]['cc_regex'].test(cardnum)) {
 				type = card;
 			};
-		});
+		};
 
 		//console.log(type);
 		changeCard(type);
@@ -58,39 +56,45 @@
 			var cvv_loc = cardDetails[type].cvv_type;
 			var cvv_length = cardDetails[type].cvv_regex;
 
-			$(radio).prop('disabled', false).prop('checked', true);
-			$('#cardnum').prop('pattern', length);
-			$('#scode').prop('pattern', cvv_length);
+			//console.log(document.getElementById(radio));
+			document.getElementById(radio).removeAttribute('disabled'); 
+			document.getElementById(radio).checked = true;
+			document.getElementById('cardnum').setAttribute('pattern', length);
+			document.getElementById('scode').setAttribute('pattern', cvv_length);
 
 			if(type == 'amex'){
-				$('#amex_scode_loc').css('display', 'block');
-				$('#other_scode_loc').css('display', 'none');
+				document.getElementById('amex_scode_loc').style.display = 'block';
+				document.getElementById('other_scode_loc').style.display = 'none';
 			} else {
-				$('#amex_scode_loc').css('display', 'none');
-				$('#other_scode_loc').css('display', 'block');
+				document.getElementById('amex_scode_loc').style.display = 'none';
+				document.getElementById('other_scode_loc').style.display = 'block';
 			}
 		} else {
-			$.each(cardDetails, function(card, details) {
-				var radio = details.radiobutton;	
-				$(radio).prop('disabled', true).prop('checked', false);
-			});
 
-			$('#cardnum').prop('pattern', '[0-9]{13,16}');
-			$('#scode').prop('pattern', '[0-9]{3,4}');
-			$('#amex_scode_loc').css('display', 'none');
-			$('#other_scode_loc').css('display', 'block');
+			for(var card in cardDetails){
+				var radio = cardDetails[card]['radiobutton'];
+				document.getElementById(radio).disabled = true; 
+				document.getElementById(radio).checked = false; 
+			}
+
+			document.getElementById('cardnum').setAttribute('pattern', '[0-9]{13,16}');
+			document.getElementById('scode').setAttribute('pattern', '[0-9]{3,4}');
+			document.getElementById('amex_scode_loc').style.display = 'none';
+			document.getElementById('other_scode_loc').style.display = 'block';
 		}
 	}
 
 /*--------------executable code--------------*/
 
-	$(':radio').prop('disabled', true);
+	for (var card in document.getElementsByName('cardtype')) {
+		document.getElementsByName('cardtype')[card].disabled = true;
+	};
 
-	$('#cardnum').bind('keyup blur', function() {
-		var cardnum = $('#cardnum').val();
+	document.getElementById('cardnum').onkeyup = function() {
+		var cardnum = document.getElementById('cardnum').value;
 		checkCardType(cardnum);
 		//console.log($('#cardnum').prop('pattern'));
-	});
+	};
 
 })();
 
