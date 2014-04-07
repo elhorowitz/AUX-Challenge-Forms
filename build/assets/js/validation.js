@@ -62,7 +62,11 @@
 	        $(element).removeClass(errorClass);
 	        $("."+errorClass).attr("aria-live", "polite").attr("aria-atomic", true);
 	        $(element).next("."+errorClass).attr("id", inputID+errorClass);
+<<<<<<< HEAD
 	        $('#status'+inputID).css('background-position', "-2px -499px").html('invalid');
+=======
+	        $('#status'+inputID).css('background', "url('../images/sprite.png') no-repeat -2px -499px").html('invalid');
+>>>>>>> gh-pages
 	        if(inputID.match('email')){
 	        	$('#share').css('margin', '0 0 13px 0');
 	        } else if (inputID.match('pword')){
@@ -75,7 +79,11 @@
 	    	//console.log($(label));
 	    	$(label).css( "display", "none" );
         	var thisID = $(element).attr('id');
+<<<<<<< HEAD
 	        $('#status'+thisID).css("background-position", "-31px -499px").html('valid');
+=======
+	        $('#status'+thisID).css("background", "url('../images/sprite.png') no-repeat -31px -499px").html('valid');
+>>>>>>> gh-pages
 	        if(thisID.match('email')){
 	        	$('#share').css('margin', '-12px 0 25px 0')
 	        } else if (thisID.match('pword')){
