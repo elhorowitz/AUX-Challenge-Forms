@@ -123,7 +123,7 @@ body {
 	/*Set up the counter*/
 	content: counter(formsection);
 	counter-increment: formsection;
-	
+
 	/*Make it pretty*/
 	width: 28px;
 	height: 0;
@@ -213,7 +213,7 @@ body {
 
 .status {
 	display: block;
-	background: url('../images/sprite.png') no-repeat -2px -450px;
+	background: url('/assets/images/sprite.png') no-repeat -2px -450px;
 	width: 19px;
 	height: 19px;
 	font-size: 0;
@@ -244,7 +244,7 @@ body {
 
 #secure {
 	display: block;
-	background: url('../images/sprite.png') no-repeat -60px -499px;
+	background: url('/assets/images/sprite.png') no-repeat -60px -499px;
 	width: 14px;
 	height: 19px;
 	margin: 0;
@@ -255,7 +255,7 @@ body {
 }
 
 #securelink {
-	
+
 }
 
 .no-js #show_pword, .no-js #show_label {
@@ -265,7 +265,7 @@ body {
 #show_pword {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: url('../images/sprite.png') no-repeat -28px -2px;
+	background: url('/assets/images/sprite.png') no-repeat -28px -2px;
 	width: 17px;
 	height: 17px;
 	display: inline-block;
@@ -275,7 +275,7 @@ body {
 }
 
 #show_pword:checked {
-	background: url('../images/sprite.png') no-repeat -136px -2px;
+	background: url('/assets/images/sprite.png') no-repeat -136px -2px;
 }
 
 #show_label {
@@ -318,48 +318,20 @@ body {
 	top: -122px;
 }
 
-<<<<<<< HEAD
-=======
-#amex-cc:checked, .no-js #amex-cc:hover, .js #amex-cc {
-	background: url('../images/sprite.png') no-repeat 0 -122px;
-}
-
->>>>>>> gh-pages
 #amex-cc{
-	background: url('../images/sprite.png') no-repeat 0 -206px;
+	background: url('/assets/images/sprite.png') no-repeat 0 -206px;
 }
 
-<<<<<<< HEAD
-=======
-#visa-cc:checked, .no-js #visa-cc:hover, .js #visa-cc {
-	background: url('../images/sprite.png') no-repeat -48px -122px;
-}
-
->>>>>>> gh-pages
 #visa-cc{
-	background: url('../images/sprite.png') no-repeat -48px -164px;
+	background: url('/assets/images/sprite.png') no-repeat -48px -164px;
 }
 
-<<<<<<< HEAD
-=======
-#discover-cc:checked, .no-js #discover-cc:hover, .js #discover-cc {
-	background: url('../images/sprite.png') no-repeat -96px -122px;
-}
-
->>>>>>> gh-pages
 #discover-cc {
-	background: url('../images/sprite.png') no-repeat -96px -206px;
+	background: url('/assets/images/sprite.png') no-repeat -96px -206px;
 }
 
-<<<<<<< HEAD
-=======
-#mastercard-cc:checked, .no-js #mastercard-cc:hover, .js #mastercard-cc {
-	background: url('../images/sprite.png') no-repeat -144px -122px;
-}
-
->>>>>>> gh-pages
 #mastercard-cc {
-	background: url('../images/sprite.png') no-repeat -144px -206px;
+	background: url('/assets/images/sprite.png') no-repeat -144px -206px;
 }
 
 #amex-cc:checked, .no-js #amex-cc:hover, #amex-cc:focus {
@@ -384,13 +356,13 @@ body {
 }
 
 #month {
-	background: url('../images/sprite.png') no-repeat -75px -60px;
+	background: url('/assets/images/sprite.png') no-repeat -75px -60px;
 	width: 125px;
 	height: 28px;
 }
 
 #year {
-	background: url('../images/sprite.png') no-repeat 0 -60px;
+	background: url('/assets/images/sprite.png') no-repeat 0 -60px;
 	width: 66px;
 	height: 27px;
 }
@@ -434,25 +406,9 @@ body {
 	text-align: center;
 }
 
-<<<<<<< HEAD
 #amex_scode_loc {
-=======
-.no-js #amex_scode_loc {
-	background: url('../images/sprite.png') no-repeat 0 -331px;
-	width: 70px;
-	height: 33px;
-
-	position: absolute;
-	top: 141px;
-	left: 197px;
-
-	font-size: 0px;
-}
-
-.js #amex_scode_loc {
->>>>>>> gh-pages
 	display: none;
-	background: url('../images/sprite.png') no-repeat 0 -331px;
+	background: url('/assets/images/sprite.png') no-repeat 0 -331px;
 	width: 70px;
 	height: 33px;
 
@@ -469,7 +425,7 @@ body {
 }
 
 #other_scode_loc {
-	background: url('../images/sprite.png') no-repeat 0 -374px;
+	background: url('/assets/images/sprite.png') no-repeat 0 -374px;
 	width: 62px;
 	height: 32px;
 
@@ -479,5 +435,3 @@ body {
 
 	font-size: 0px;
 }
-
-

@@ -6,10 +6,10 @@
 
 ;(function(){
 
-	$('.forminputs').each(function() {
-		var inputID = $(this).attr('id');
-		$(this).after('<label class="status" id="status'+inputID+'" aria-live="polite">hidden</label>');
-	});
+    $('.forminputs').each(function() {
+        var inputID = $(this).attr('id');
+        $(this).after('<label class="status" id="status'+inputID+'" aria-live="polite">hidden</label>');
+    });
 
     $('.exp_date').after('<label class="status" id="status'+$('.exp_date').attr('id')+'" aria-live="polite">hidden</label>');
 
@@ -25,9 +25,9 @@
     };
 
 
-	// Setup form validation on the #register-form element
+    // Setup form validation on the #register-form element
     $(".form").validate({
-    	onkeyup: false,
+        onkeyup: false,
         // Specify the validation rules
         rules: {
             ptitle: defaultRules,
@@ -35,16 +35,16 @@
             name: defaultRules,
             email: {
                 required: true,
-            	email: true
+                email: true
             },
             pword: defaultRules, 
             cardnum: defaultRules, 
             scode: defaultRules,
             month: {
-            	min: 1
+                min: 1
             },
             year: {
-            	min: 1
+                min: 1
             }
         },
         // Specify the validation error messages
@@ -58,45 +58,36 @@
         },
 
         highlight: function(element, errorClass) {
-        	var inputID = $(element).attr('id');
-	        $(element).removeClass(errorClass);
-	        $("."+errorClass).attr("aria-live", "polite").attr("aria-atomic", true);
-	        $(element).next("."+errorClass).attr("id", inputID+errorClass);
-<<<<<<< HEAD
-	        $('#status'+inputID).css('background-position', "-2px -499px").html('invalid');
-=======
-	        $('#status'+inputID).css('background', "url('../images/sprite.png') no-repeat -2px -499px").html('invalid');
->>>>>>> gh-pages
-	        if(inputID.match('email')){
-	        	$('#share').css('margin', '0 0 13px 0');
-	        } else if (inputID.match('pword')){
+            var inputID = $(element).attr('id');
+            $(element).removeClass(errorClass);
+            $("."+errorClass).attr("aria-live", "polite").attr("aria-atomic", true);
+            $(element).next("."+errorClass).attr("id", inputID+errorClass);
+            $('#status'+inputID).css('background-position', "-2px -499px").html('invalid');
+            if(inputID.match('email')){
+                $('#share').css('margin', '0 0 13px 0');
+            } else if (inputID.match('pword')){
                 $('#show_pword').css('bottom', '15px');
                 $('#show_label').css('bottom', '-8px');
             } 
-	    },
+        },
 
-	    success: function(label, element) {    
-	    	//console.log($(label));
-	    	$(label).css( "display", "none" );
-        	var thisID = $(element).attr('id');
-<<<<<<< HEAD
-	        $('#status'+thisID).css("background-position", "-31px -499px").html('valid');
-=======
-	        $('#status'+thisID).css("background", "url('../images/sprite.png') no-repeat -31px -499px").html('valid');
->>>>>>> gh-pages
-	        if(thisID.match('email')){
-	        	$('#share').css('margin', '-12px 0 25px 0')
-	        } else if (thisID.match('pword')){
+        success: function(label, element) {    
+            //console.log($(label));
+            $(label).css( "display", "none" );
+            var thisID = $(element).attr('id');
+            $('#status'+thisID).css("background-position", "-31px -499px").html('valid');
+            if(thisID.match('email')){
+                $('#share').css('margin', '-12px 0 25px 0')
+            } else if (thisID.match('pword')){
                 $('#show_pword').css('bottom', '38px');
                 $('#show_label').css('bottom', '15px');
             } 
-	    },
-	    
-	    submitHandler: function(form) {
+        },
+
+        submitHandler: function(form) {
             form.submit();
         }
     
     });
 
 })();
-
