@@ -1,4 +1,4 @@
-(function(){
+;(function(){
 
 	/*-----dictionary for card types-----*/
 	var cardDetails = {
@@ -7,36 +7,28 @@
 			cc_regex : /^3[47]/,
 			cc_length : '^[0-9]{15}$',
 			cvv_regex : '^[0-9]{4}$',
-			pattern : 'Only include numbers! Example: 123412345612345',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat 0 -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat 0 -206px'
+			pattern : 'Only include numbers! Example: 123412345612345'
 		},
 		visa : {
 			radiobutton : 'visa-cc',
 			cc_regex : /^4/,
 			cc_length : '^[0-9]{13,16}$',
 			cvv_regex : '^[0-9]{3}$',
-			pattern : 'Only include numbers! Example: 1234123412341234',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -48px -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -48px -164px'
+			pattern : 'Only include numbers! Example: 1234123412341234'
 		},
 		discover : {
 			radiobutton : 'discover-cc',
 			cc_regex : /^6(?:011|5|4[4-9]|22(?:1(?:2[6-9]|[3-9]\d)|[2-8]\d{2}|9(?:[01]\d|2[0-5])))/,
 			cc_length : '^[0-9]{16}$',
 			cvv_regex : '^[0-9]{3}$',
-			pattern : 'Only include numbers! Example: 1234123412341234',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -96px -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -96px -206px'
+			pattern : 'Only include numbers! Example: 1234123412341234'
 		},
 		mastercard : {
 			radiobutton : 'mastercard-cc',
 			cc_regex : /^5[0-5]/,
 			cc_length : '^[0-9]{16}$',
 			cvv_regex : '^[0-9]{3}$',
-			pattern : 'Only include numbers! Example: 1234123412341234',
-			is_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -144px -122px',
-			not_checked : 'url(\'\/assets\/images\/sprite.png\') no-repeat -144px -206px'
+			pattern : 'Only include numbers! Example: 1234123412341234'
 		}
 	};
 
@@ -67,8 +59,6 @@
 			for (var alltypes in cardDetails){
 				if(alltypes != type){
 					var otherradios = cardDetails[alltypes].radiobutton;
-					//console.log(cardDetails[alltypes].not_checked);
-					document.getElementById(otherradios).style.background = cardDetails[alltypes].not_checked;
 				} else {
 					var radio = cardDetails[type].radiobutton;
 					var length = cardDetails[type].cc_length;
@@ -99,7 +89,6 @@
 				var radio = cardDetails[card]['radiobutton'];
 				document.getElementById(radio).disabled = true; 
 				document.getElementById(radio).checked = false; 
-				document.getElementById(radio).style.background = cardDetails[card].is_checked;
 			}
 
 			document.getElementById('cardnum').setAttribute('pattern', '[0-9]{13,16}');

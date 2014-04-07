@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Whoo!</title>
         <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Antic+Slab">
         <script src="assets/js/lib/modernizr.js"></script>
     </head>
 
@@ -26,7 +27,7 @@
                 
                     <label class="label" for="paddress">Portfolio address</label>
                     <input class= "forminputs" id="paddress" name="paddress" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,19}$" title="Must begin with a letter and be 2 to 20 characters long. Only dashes, underscores, and periods are allowed for symbols!" aria-labelledby="domain" aria-required="true" required>
-                    <span class="note" id="domain">.sample.com</span>
+                    <label class="note" id="domain">.sample.com</label>
                 </div>
             </fieldset>
 
@@ -40,7 +41,7 @@
 
                     <label class="label" for="email">Email</label>
                     <input class= "forminputs" id="email" name="email" type="email" aria-required="true" aria-describedby="share" required>
-                    <span class="note" id="share">NOTE: We'll never share your email, promise.</span> 
+                    <label class="note" id="share">NOTE: We'll never share your email, promise.</label> 
 
                     <label class="label" for="pword">Password</label>
                     <input class= "forminputs" id="pword" name="pword" type="password" pattern="(?=^.{5,}$)((?=.*\d))(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Must include an uppercase character, a lowercase character, and a number. Minimum 5 characters long!" aria-required="true" required>
@@ -58,9 +59,8 @@
                 
                 <div class="sectioninputs">
                     
-                    <span class="note" id="secure">This is a secure form<a href="#" id="securelink"></a></span>
                     <label class="label" for="cardnum">Card number</label>
-                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="^[0-9]{13,16}$" title="Only include numbers! Example: 1234567891011" autocomplete="off" aria-describedby="secure" aria-required="true" required>
+                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="^[0-9]{13,16}$" title="Only include numbers! Example: 1234567891011" autocomplete="off" aria-required="true" required>
 
                     <!--NO JAVASCRIPT: manually select card-->
                     <fieldset class="all_cardtypes">
@@ -77,8 +77,8 @@
 
                     <label class="label" for="scode">Security code</label>
                     <input class= "forminputs" id="scode" name="scode" type="text" pattern="^[0-9]{3,4}$" autocomplete="off" title="Example: 123" aria-describedby="amex_scode_loc other_scode_loc" aria-required="true" required>
-                    <span class="note" id="amex_scode_loc">American Express security codes are located on the front of your credit card</span>
-                    <span class="note" id="other_scode_loc">Card security codes are located on the back for non-American Express cards</span>
+                    <label class="note" id="amex_scode_loc">American Express security codes are located on the front of your credit card</label>
+                    <label class="note" id="other_scode_loc">Card security codes are located on the back for non-American Express cards</label>
                     
                     <fieldset class="exp_date" id="exp_date">
                         <legend class="label">Expiration date</legend>
@@ -113,11 +113,9 @@
                     </fieldset>
                 </div>
             </fieldset>
-            <label class="hiddenlabel" for="submit">Submit</label>
-            <input id="submit" name="submit" type="submit" value="Create your portfolio">
+            <input id="submit" name="submit" type="submit" value="Create your portfolio" aria-describedby="secure">
+             <label class="note" id="secure">This is a secure form</label>
         </form>
-        <div class="script">
-            <script src="assets/js/script.js"></script>
-        </div>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
