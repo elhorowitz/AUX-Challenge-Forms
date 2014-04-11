@@ -27,7 +27,7 @@
                 
                     <label class="label" for="paddress">Portfolio address</label>
                     <input class= "forminputs" id="paddress" name="paddress" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,19}$" title="Must begin with a letter and be 2 to 20 characters long. Only dashes, underscores, and periods are allowed for symbols!" aria-labelledby="domain" aria-required="true" required>
-                    <label class="note" id="domain">.sample.com</label>
+                    <label class="note" id="domain" for="paddress">.sample.com</label>
                 </div>
             </fieldset>
 
@@ -41,7 +41,7 @@
 
                     <label class="label" for="email">Email</label>
                     <input class= "forminputs" id="email" name="email" type="email" aria-required="true" aria-describedby="share" required>
-                    <label class="note" id="share">NOTE: We'll never share your email, promise.</label> 
+                    <label class="note" id="share" for="email">NOTE: We'll never share your email, promise.</label> 
 
                     <label class="label" for="pword">Password</label>
                     <input class= "forminputs" id="pword" name="pword" type="password" pattern="(?=^.{5,}$)((?=.*\d))(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Must include an uppercase character, a lowercase character, and a number. Minimum 5 characters long!" aria-required="true" required>
@@ -60,7 +60,7 @@
                 <div class="sectioninputs">
                     
                     <label class="label" for="cardnum">Card number</label>
-                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="^[0-9]{13,16}$" title="Only include numbers! Example: 1234567891011" autocomplete="off" aria-required="true" required>
+                    <input class= "forminputs" id="cardnum" name="cardnum" type="text" pattern="^[0-9]{13,16}$" title="Only include numbers! Example: 1234567891011" autocomplete="off" aria-required="true" aria-describedby="secure" required>
 
                     <!--NO JAVASCRIPT: manually select card-->
                     <fieldset class="all_cardtypes">
@@ -113,8 +113,8 @@
                     </fieldset>
                 </div>
             </fieldset>
-            <input id="submit" name="submit" type="submit" value="Create your portfolio" aria-describedby="secure">
-             <label class="note" id="secure">This is a secure form</label>
+            <input id="submit" name="submit" type="submit" value="Create your portfolio" >
+             <label class="note" id="secure" for="cardnum">This is a secure form</label>
         </form>
         <script src="assets/js/script.js"></script>
     </body>

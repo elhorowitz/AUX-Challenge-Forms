@@ -208,7 +208,7 @@ body {
 	margin: -12px 0 24px 0;
 	font-size: .7em;
 	color: #A2A2A2;
-	cursor: default;
+	cursor: pointer;
 }
 
 .status {
@@ -254,10 +254,6 @@ body {
 	font-size: 0;
 }
 
-#securelink {
-
-}
-
 .no-js #show_pword, .no-js #show_label {
 	display:none;
 }
@@ -285,7 +281,6 @@ body {
 	bottom: 15px;
 	left: 64px;
 	line-height: 2em;
-	cursor: pointer;
 }
 
 /**---------Custom Form Stylings---------**/
